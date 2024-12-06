@@ -1,14 +1,13 @@
 import streamlit as st
 import requests
+from datetime import datetime
 
 st.title("Estimer votre trajet de Taxi")
 
-pickup_datetime = st.text_input(
-    "Date et heure de prise en charge (format : YYYY-MM-DD HH:MM) *",
-    key="pickup_datetime"
-)
+pickup_date = st.date_input("Date de prise en charge")
+pickup_time = st.time_input("Heure de prise en charge")
+pickup_datetime = datetime.combine(pickup_date, pickup_time).strftime("%Y-%m-%d %H:%M:%S")
 st.markdown("_Exemple : 2014-07-06 19:18:00_")
-
 
 pickup_longitude = st.number_input(
     "Longitude de prise en charge *",
