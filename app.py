@@ -72,7 +72,7 @@ if st.button("Estimer votre trajet"):
                 fare = response.json().get("fare")
                 if fare is not None:
                     st.write(f"Votre trajet en taxi devrait coûter : {fare:.2f} $")
-                    st.markdown("_Si vous avez utilisé les données d'exemples, le résultat devrait être 14.71 ;)._")
+                    st.markdown("_Si vous avez utilisé les données d'exemples, le résultat devrait être de 14.71 $ ;)._")
 
                 else:
                     st.error("Veuillez réesayer")
